@@ -12,7 +12,7 @@ export default class XTouchOpacityView extends Component {
         pressTimePress: PropTypes.func.isRequired,
         onPress: PropTypes.func.isRequired,
         object: PropTypes.object,
-        style: PropTypes.object,
+        touchOpacityStyle: PropTypes.object,
     };
 
     static defaultProps = {
@@ -20,14 +20,14 @@ export default class XTouchOpacityView extends Component {
         activeOpacity: 0.8,
         underlayColor: 'white',
         pressTime: 2000,
-        style: {},
+        touchOpacityStyle: {},
     };
 
     render() {
         let lastPressTime = 1;
-        const {disabled, activeOpacity, underlayColor, onPress, pressTime, pressTimePress, object, style} = this.props;
+        const {disabled, activeOpacity, underlayColor, onPress, pressTime, pressTimePress, object, touchOpacityStyle} = this.props;
         return <TouchableOpacity
-            style={style}
+            style={touchOpacityStyle}
             disabled={disabled}
             activeOpacity={activeOpacity}
             underlayColor={underlayColor}

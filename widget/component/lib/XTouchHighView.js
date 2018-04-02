@@ -12,7 +12,7 @@ export default class XTouchHighView extends Component {
         pressTimePress: PropTypes.func.isRequired,
         onPress: PropTypes.func.isRequired,
         object: PropTypes.object,
-        style: PropTypes.object,
+        touchHighStyle: PropTypes.object,
     };
 
     static defaultProps = {
@@ -20,14 +20,15 @@ export default class XTouchHighView extends Component {
         activeOpacity: 0.8,
         underlayColor: 'white',
         pressTime: 2000,
-        style: {},
+        touchHighStyle: {},
     };
+
 
     render() {
         let lastPressTime = 1;
-        const {disabled, activeOpacity, underlayColor, onPress, pressTime, pressTimePress, object, style} = this.props;
+        const {disabled, activeOpacity, underlayColor, onPress, pressTime, pressTimePress, object, touchHighStyle} = this.props;
         return <TouchableHighlight
-            style={style}
+            style={touchHighStyle}
             disabled={disabled}
             activeOpacity={activeOpacity}
             underlayColor={underlayColor}

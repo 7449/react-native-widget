@@ -1,17 +1,38 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {XBackComponent} from "./widget/component/index";
+import {Alert, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {XBackComponent, XTouchHighView, XTouchOpacityView} from "./widget/component/index";
 
 export default class App extends XBackComponent {
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>{'已经添加的组件'}</Text>
-                <View style={styles.itemContent}>
-                    <Text style={styles.item}>{'XBackComponent:'}</Text>
-                    <Text style={styles.childItem}>{'对android back的注册'}</Text>
-                </View>
-
+                <ScrollView>
+                    <View style={styles.itemContent}>
+                        <Text style={styles.item}>{'XBackComponent:'}</Text>
+                        <Text style={styles.childItem}>{'对android back的注册'}</Text>
+                    </View>
+                    <View style={styles.itemContent}>
+                        <XTouchHighView
+                            activeOpacity={0.5}
+                            underlayColor={'yellow'}
+                            pressTimePress={() => Alert.alert('请勿快速点击')}
+                            onPress={() => Alert.alert('click')}>
+                            <Text style={styles.item}>{'XTouchHighView:'}</Text>
+                        </XTouchHighView>
+                        <Text style={styles.childItem}>{'button'}</Text>
+                    </View>
+                    <View style={styles.itemContent}>
+                        <XTouchOpacityView
+                            activeOpacity={0.5}
+                            underlayColor={'yellow'}
+                            pressTimePress={() => Alert.alert('请勿快速点击')}
+                            onPress={() => Alert.alert('click')}>
+                            <Text style={styles.item}>{'XTouchOpacityView:'}</Text>
+                        </XTouchOpacityView>
+                        <Text style={styles.childItem}>{'button'}</Text>
+                    </View>
+                </ScrollView>
             </View>
         );
     }

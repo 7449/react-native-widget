@@ -9,16 +9,15 @@ export default class XText extends Component {
     static propTypes = {
         disabled: PropTypes.bool,
         activeOpacity: PropTypes.number,
-        underlayColor: PropTypes.string,
         pressTime: PropTypes.number,
         pressTimePress: PropTypes.func,
         onPress: PropTypes.func,
         object: PropTypes.object,
-        touchOpacityStyle: PropTypes.object,
+        touchOpacityStyle: PropTypes.any,
 
         numberOfLines: PropTypes.number,
         text: PropTypes.string,
-        textStyle: PropTypes.number,
+        textStyle: PropTypes.any,
         fontSize: PropTypes.number,
         fontFamily: PropTypes.string,
     };
@@ -26,7 +25,6 @@ export default class XText extends Component {
     static defaultProps = {
         disabled: false,
         activeOpacity: 0.8,
-        underlayColor: 'white',
         pressTime: 2000,
 
         numberOfLines: 1,
@@ -42,7 +40,6 @@ export default class XText extends Component {
         const {
             disabled,
             activeOpacity,
-            underlayColor,
             pressTime,
             pressTimePress,
             onPress,
@@ -52,7 +49,6 @@ export default class XText extends Component {
         return <XTouchOpacityView
             disabled={disabled}
             activeOpacity={activeOpacity}
-            underlayColor={underlayColor}
             pressTime={pressTime}
             pressTimePress={pressTimePress}
             onPress={onPress}

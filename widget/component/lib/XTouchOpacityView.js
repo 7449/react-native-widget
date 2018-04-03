@@ -9,8 +9,8 @@ export default class XTouchOpacityView extends Component {
         activeOpacity: PropTypes.number,
         underlayColor: PropTypes.string,
         pressTime: PropTypes.number,
-        pressTimePress: PropTypes.func.isRequired,
-        onPress: PropTypes.func.isRequired,
+        pressTimePress: PropTypes.func,
+        onPress: PropTypes.func,
         object: PropTypes.object,
         touchOpacityStyle: PropTypes.object,
     };

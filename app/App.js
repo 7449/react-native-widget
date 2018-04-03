@@ -1,6 +1,7 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {XBackComponent, XText} from "./widget/component/index";
+import {XBackComponent, XText} from "../widget/component/index";
+import {ScreenXTextName, ScreenXTouchName} from "./String";
 
 export default class App extends XBackComponent {
     render() {
@@ -8,10 +9,17 @@ export default class App extends XBackComponent {
             <View style={styles.container}>
                 <Text style={styles.title}>{'已经添加的组件'}</Text>
                 <ScrollView>
-                    <XText text={'XBackComponent'} textStyle={styles.item}/>
-                    <XText text={'XTouchHighView'} textStyle={styles.item}/>
-                    <XText text={'XTouchOpacityView'} textStyle={styles.item}/>
-                    <XText text={'XText'} textStyle={styles.item}/>
+                    <XText
+                        text={'XBackComponent'}
+                        textStyle={styles.item}/>
+                    <XText
+                        onPress={() => this.props.navigation.navigate(ScreenXTouchName)}
+                        text={'XTouch'}
+                        textStyle={styles.item}/>
+                    <XText
+                        onPress={() => this.props.navigation.navigate(ScreenXTextName)}
+                        text={'XText'}
+                        textStyle={styles.item}/>
                 </ScrollView>
             </View>
         );

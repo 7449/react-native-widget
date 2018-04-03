@@ -9,8 +9,8 @@ export default class XTouchHighView extends Component {
         activeOpacity: PropTypes.number,
         underlayColor: PropTypes.string,
         pressTime: PropTypes.number,
-        pressTimePress: PropTypes.func.isRequired,
-        onPress: PropTypes.func.isRequired,
+        pressTimePress: PropTypes.func,
+        onPress: PropTypes.func,
         object: PropTypes.object,
         touchHighStyle: PropTypes.object,
     };

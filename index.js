@@ -1,4 +1,4 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import {AppRegistry} from 'react-native';
+import NavigatorManager from './app/NavigatorManager';
 
-AppRegistry.registerComponent('rnwidget', () => App);
+AppRegistry.registerComponent('rnwidget', () => NavigatorManager);

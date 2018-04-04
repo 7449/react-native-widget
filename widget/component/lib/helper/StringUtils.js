@@ -7,3 +7,8 @@ export const isEmpty = (text) => {
 };
 
 
+export const ERROR = 'ERROR';
+export const EMPTY = 'EMPTY';
+export const SUCCESS = 'SUCCESS';
+export const LOADING = 'LOADING';
+export const NORMAL = 'NORMAL';

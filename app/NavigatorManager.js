@@ -6,6 +6,7 @@ import SimpleXTextScreen from "./SimpleXTextScreen";
 import SimpleXImageScreen from "./SimpleXImageScreen";
 import SimpleXCardScreen from "./SimpleXCardScreen";
 import SimpleXTextButtonScreen from "./SimpleXTextButtonScreen";
+import SimpleXStatusScreen from "./SimpleXStatusScreen";
 
 
 const RouteConfigs = {
@@ -26,6 +27,9 @@ const RouteConfigs = {
     },
     SimpleXTextButtonScreen: {
         screen: SimpleXTextButtonScreen
+    },
+    SimpleXStatusScreen: {
+        screen: SimpleXStatusScreen
     }
 };
 

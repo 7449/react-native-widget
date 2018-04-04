@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {XBackComponent, XText} from "../widget/component/index";
-import {ScreenXImageName, ScreenXTextName, ScreenXTouchName} from "./String";
+import {ScreenXCardName, ScreenXImageName, ScreenXTextName, ScreenXTouchName} from "./String";
 
 export default class App extends XBackComponent {
     render() {
@@ -23,6 +23,10 @@ export default class App extends XBackComponent {
                     <XText
                         onPress={() => this.props.navigation.navigate(ScreenXImageName)}
                         text={'XImage'}
+                        textStyle={styles.item}/>
+                    <XText
+                        onPress={() => this.props.navigation.navigate(ScreenXCardName)}
+                        text={'XCard'}
                         textStyle={styles.item}/>
                 </ScrollView>
             </View>

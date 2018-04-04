@@ -3,13 +3,15 @@ import XTouchOpacityView from "./lib/XTouchOpacityView";
 import XTouchHighView from "./lib/XTouchHighView";
 import XText from "./lib/XText";
 import XImage from "./lib/XImage";
+import XCardView from "./lib/XCardView";
 
 export {
     XBackComponent,
     XTouchOpacityView,
     XTouchHighView,
     XText,
-    XImage
+    XImage,
+    XCardView,
 };
 
 

@@ -4,6 +4,7 @@ import App from "./App";
 import SimpleXTouchScreen from "./SimpleXTouchScreen";
 import SimpleXTextScreen from "./SimpleXTextScreen";
 import SimpleXImageScreen from "./SimpleXImageScreen";
+import SimpleXCardScreen from "./SimpleXCardScreen";
 
 
 const RouteConfigs = {
@@ -18,6 +19,9 @@ const RouteConfigs = {
     },
     SimpleXImageScreen: {
         screen: SimpleXImageScreen
+    },
+    SimpleXCardScreen: {
+        screen: SimpleXCardScreen
     },
 };
 

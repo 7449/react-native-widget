@@ -1,6 +1,7 @@
 import {TouchableOpacity} from 'react-native';
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import {isNull} from "./helper/StringUtils";
 
 export default class XTouchOpacityView extends Component {
 
@@ -10,6 +11,9 @@ export default class XTouchOpacityView extends Component {
         pressTime: PropTypes.number,
         pressTimePress: PropTypes.func,
         onPress: PropTypes.func,
+        onLongPress: PropTypes.func,
+        onPressIn: PropTypes.func,
+        onPressOut: PropTypes.func,
         object: PropTypes.object,
         touchOpacityStyle: PropTypes.any,
     };
@@ -22,18 +26,37 @@ export default class XTouchOpacityView extends Component {
 
     render() {
         let lastPressTime = 1;
-        const {disabled, activeOpacity, onPress, pressTime, pressTimePress, object, touchOpacityStyle} = this.props;
+        const {disabled, activeOpacity, onPress, onLongPress, onPressIn, onPressOut, pressTime, pressTimePress, object, touchOpacityStyle} = this.props;
         return <TouchableOpacity
             style={touchOpacityStyle}
             disabled={disabled}
             activeOpacity={activeOpacity}
+            onLongPress={() => {
+                if (!isNull(onLongPress)) {
+                    onLongPress();
+                }
+            }}
+            onPressIn={() => {
+                if (!isNull(onPressIn)) {
+                    onPressIn();
+                }
+            }}
+            onPressOut={() => {
+                if (!isNull(onPressOut)) {
+                    onPressOut();
+                }
+            }}
             onPress={() => {
                 let curTime = new Date().getTime();
                 if (curTime - lastPressTime > pressTime) {
                     lastPressTime = curTime;
-                    onPress(object);
+                    if (!isNull(onPress)) {
+                        onPress(object);
+                    }
                 } else {
-                    pressTimePress();
+                    if (!isNull(pressTimePress)) {
+                        pressTimePress();
+                    }
                 }
             }}>{this.props.children}</TouchableOpacity>
     }

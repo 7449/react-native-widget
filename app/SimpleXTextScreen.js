@@ -12,18 +12,10 @@ export default class SimpleXTextScreen extends XBackComponent {
                     <XText textStyle={styles.content} text={'NO TOUCH XText'}/>
                 </View>
                 <XText
-                    onPress={() => {
-                    }}
-                    pressTimePress={() => {
-                    }}
                     touchOpacityStyle={itemStyle} textStyle={styles.content} text={'Touch Opacity XText'}/>
                 <XTouchHighView
                     touchHighStyle={itemStyle}
-                    underlayColor={'blue'}
-                    pressTimePress={() => {
-                    }}
-                    onPress={() => {
-                    }}>
+                    underlayColor={'blue'}>
                     <XText text={'Touch High XText'} textStyle={styles.content}/>
                 </XTouchHighView>
             </View>

@@ -1,9 +1,9 @@
-import {Image} from 'react-native';
+import {View} from 'react-native';
 import React, {Component} from "react";
-import XTouchOpacityView from "./XTouchOpacityView";
 import PropTypes from "prop-types";
+import XTouchOpacityView from "./XTouchOpacityView";
 
-export default class XImage extends Component {
+export default class XCardView extends Component {
 
     static propTypes = {
         disabled: PropTypes.bool,
@@ -17,21 +17,29 @@ export default class XImage extends Component {
         object: PropTypes.object,
         touchOpacityStyle: PropTypes.any,
 
-        imageStyle: PropTypes.any,
-        icon: PropTypes.any,
+        cardStyle: PropTypes.any,
     };
 
     static defaultProps = {
         disabled: false,
         activeOpacity: 0.8,
         pressTime: 2000,
+
+        cardStyle: {
+            marginTop: 5,
+            marginBottom: 5,
+            marginStart: 10,
+            marginEnd: 10,
+            borderRadius: 5,
+            backgroundColor: 'white',
+        },
     };
 
     render() {
-        return !this.props.disabled ? this.getTouchImage() : this.getImage();
+        return !this.props.disabled ? this.getTouchCard() : this.getCard();
     }
 
-    getTouchImage = () => {
+    getTouchCard = () => {
         const {
             disabled,
             activeOpacity,
@@ -55,15 +63,16 @@ export default class XImage extends Component {
             onPress={onPress}
             object={object}
             touchOpacityStyle={touchOpacityStyle}>
-            {this.getImage()}
+            {this.getCard()}
         </XTouchOpacityView>;
     };
 
-    getImage = () => {
-        const {
-            imageStyle,
-            icon,
-        } = this.props;
-        return <Image style={[imageStyle]} source={icon}/>;
+    getCard = () => {
+        const {cardStyle} = this.props;
+        return (
+            <View style={cardStyle}>{this.props.children}</View>
+        );
     };
+
 }
+

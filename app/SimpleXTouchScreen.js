@@ -10,9 +10,6 @@ export default class SimpleXTouchScreen extends XBackComponent {
             <View>
                 <XTouchOpacityView
                     activeOpacity={0.4}
-                    onPress={() => {
-
-                    }}
                     pressTime={2000}
                     pressTimePress={() => {
                         Alert.alert('', '请勿快速重复点击')
@@ -22,9 +19,6 @@ export default class SimpleXTouchScreen extends XBackComponent {
                 </XTouchOpacityView>
                 <XTouchHighView
                     underlayColor={'blue'}
-                    onPress={() => {
-
-                    }}
                     pressTime={2000}
                     pressTimePress={() => {
                         Alert.alert('', '请勿快速重复点击')

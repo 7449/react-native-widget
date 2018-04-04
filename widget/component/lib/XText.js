@@ -1,7 +1,6 @@
 import {Text} from 'react-native';
 import React, {Component} from "react";
 import XTouchOpacityView from "./XTouchOpacityView";
-import {isNull} from "./helper/StringUtils";
 import PropTypes from "prop-types";
 
 export default class XText extends Component {
@@ -12,6 +11,9 @@ export default class XText extends Component {
         pressTime: PropTypes.number,
         pressTimePress: PropTypes.func,
         onPress: PropTypes.func,
+        onLongPress: PropTypes.func,
+        onPressIn: PropTypes.func,
+        onPressOut: PropTypes.func,
         object: PropTypes.object,
         touchOpacityStyle: PropTypes.any,
 
@@ -33,7 +35,7 @@ export default class XText extends Component {
     };
 
     render() {
-        return !isNull(this.props.onPress) ? this.getTouchText() : this.getText();
+        return !this.props.disabled ? this.getTouchText() : this.getText();
     }
 
     getTouchText = () => {
@@ -43,6 +45,9 @@ export default class XText extends Component {
             pressTime,
             pressTimePress,
             onPress,
+            onLongPress,
+            onPressIn,
+            onPressOut,
             object,
             touchOpacityStyle,
         } = this.props;
@@ -51,6 +56,9 @@ export default class XText extends Component {
             activeOpacity={activeOpacity}
             pressTime={pressTime}
             pressTimePress={pressTimePress}
+            onLongPress={onLongPress}
+            onPressIn={onPressIn}
+            onPressOut={onPressOut}
             onPress={onPress}
             object={object}
             touchOpacityStyle={touchOpacityStyle}>

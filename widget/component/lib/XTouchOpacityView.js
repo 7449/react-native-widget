@@ -21,7 +21,7 @@ export default class XTouchOpacityView extends Component {
     static defaultProps = {
         disabled: false,
         activeOpacity: 0.8,
-        pressTime: 2000,
+        pressTime: 1000,
     };
 
     render() {

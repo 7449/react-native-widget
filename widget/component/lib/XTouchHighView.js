@@ -21,7 +21,7 @@ export default class XTouchHighView extends Component {
     static defaultProps = {
         disabled: false,
         underlayColor: 'white',
-        pressTime: 2000,
+        pressTime: 1000,
     };
 
 

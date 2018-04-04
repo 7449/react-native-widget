@@ -5,6 +5,7 @@ import SimpleXTouchScreen from "./SimpleXTouchScreen";
 import SimpleXTextScreen from "./SimpleXTextScreen";
 import SimpleXImageScreen from "./SimpleXImageScreen";
 import SimpleXCardScreen from "./SimpleXCardScreen";
+import SimpleXTextButtonScreen from "./SimpleXTextButtonScreen";
 
 
 const RouteConfigs = {
@@ -23,6 +24,9 @@ const RouteConfigs = {
     SimpleXCardScreen: {
         screen: SimpleXCardScreen
     },
+    SimpleXTextButtonScreen: {
+        screen: SimpleXTextButtonScreen
+    }
 };
 
 const StackNavigatorConfig = {

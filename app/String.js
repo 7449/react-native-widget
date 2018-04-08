@@ -4,3 +4,4 @@ export const ScreenXImageName = 'SimpleXImageScreen';
 export const ScreenXCardName = 'SimpleXCardScreen';
 export const ScreenXTextButtonName = 'SimpleXTextButtonScreen';
 export const ScreenXStatusName = 'SimpleXStatusScreen';
+export const ScreenXModalName = 'SimpleXModalScreen';

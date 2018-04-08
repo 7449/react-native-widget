@@ -13,6 +13,9 @@ export default class XStatusView extends Component {
         onErrorPress: PropTypes.func,
         loadingColor: PropTypes.string,
 
+        emptyImage: PropTypes.any,
+        errorImage: PropTypes.any,
+
         normalView: PropTypes.element,
         errorView: PropTypes.element,
         emptyView: PropTypes.element,
@@ -34,6 +37,8 @@ export default class XStatusView extends Component {
         errorText: '出现错误',
         emptyText: '数据为空',
         loadingText: '正在加载',
+        emptyImage: require('./ximage/icon_net_empty.png'),
+        errorImage: require('./ximage/icon_net_error.png'),
 
         normalStyle: {justifyContent: 'center', alignItems: 'center', flex: 1},
         emptyStyle: {justifyContent: 'center', alignItems: 'center', flex: 1},
@@ -62,8 +67,8 @@ export default class XStatusView extends Component {
 
     getEmptyView = () => {
         return <View style={this.props.emptyStyle}>
-            <XImage icon={require('../../../image/icon_net_empty.png')}/>
-            <XText text={this.props.emptyText}/>
+            <XImage icon={this.props.emptyImage}/>
+            <XText onPress={this.props.onEmptyPress} text={this.props.emptyText}/>
         </View>;
     };
     getNormalView = () => {
@@ -72,8 +77,8 @@ export default class XStatusView extends Component {
     };
     getErrorView = () => {
         return <View style={this.props.errorStyle}>
-            <XImage icon={require('../../../image/icon_net_error.png')}/>
-            <XText text={this.props.errorText}/>
+            <XImage icon={this.props.errorImage}/>
+            <XText onPress={this.props.onErrorPress} text={this.props.errorText}/>
         </View>;
     };
     getLoadingView = () => {

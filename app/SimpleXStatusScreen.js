@@ -11,7 +11,7 @@ export default class SimpleXStatusScreen extends XBackComponent {
 
     render() {
         return <View style={{flex: 1}}>
-            <XStatusView status={this.state.status}>
+            <XStatusView status={this.state.status} normalView={this.getNormalView()}>
                 <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
                     <XText text={SUCCESS}/>
                 </View>
@@ -40,6 +40,12 @@ export default class SimpleXStatusScreen extends XBackComponent {
             </View>
         </View>
     }
+
+    getNormalView = () => {
+        return <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+            <XText text={'NORMAL'}/>
+        </View>;
+    };
 
     onBackPress = () => {
         this.props.navigation.goBack();

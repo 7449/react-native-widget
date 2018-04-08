@@ -8,6 +8,7 @@ import XTextButton from "./lib/XTextButton";
 import XStatusView from "./lib/XStatusView";
 import XModalView from "./lib/XModalView";
 import XLoadingView from "./lib/XLoadingView";
+import XToolBar from "./lib/XToolBar";
 import SimpleModalBottomView from "./lib/simple/SimpleModalBottomView";
 
 export {
@@ -18,6 +19,7 @@ export {
     XImage,
     XCardView,
     XTextButton,
+    XToolBar,
     XStatusView,
     XModalView,
     XLoadingView,

@@ -2,6 +2,7 @@ import {View} from 'react-native';
 import React, {Component} from "react";
 import XText from "../XText";
 import PropTypes from "prop-types";
+import {x10, x20, x8} from "../helper/Dimens";
 
 export default class SimpleModalBottomView extends Component {
 
@@ -21,19 +22,19 @@ export default class SimpleModalBottomView extends Component {
         cancelText: '取消',
         okStyle: {
             color: 'gray',
-            padding: 8,
-            margin: 10
+            padding: x8,
+            margin: x10
         },
         cancelStyle: {
             color: 'gray',
-            padding: 8,
-            margin: 10
+            padding: x8,
+            margin: x10
         },
         viewStyle: {
             flexDirection: 'row',
             alignSelf: 'flex-end',
-            marginTop: 20,
-            marginEnd: 20
+            marginTop: x20,
+            marginEnd: x20
         },
     };
 

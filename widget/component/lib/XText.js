@@ -2,6 +2,7 @@ import {Text} from 'react-native';
 import React, {Component} from "react";
 import XTouchOpacityView from "./XTouchOpacityView";
 import PropTypes from "prop-types";
+import {x18} from "./helper/Dimens";
 
 export default class XText extends Component {
 
@@ -30,7 +31,7 @@ export default class XText extends Component {
         pressTime: 2000,
 
         numberOfLines: 1,
-        fontSize: 18,
+        fontSize: x18,
         fontFamily: 'newFont',
     };
 

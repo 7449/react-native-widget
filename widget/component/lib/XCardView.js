@@ -2,6 +2,7 @@ import {View} from 'react-native';
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import XTouchOpacityView from "./XTouchOpacityView";
+import {x10, x5} from "./helper/Dimens";
 
 export default class XCardView extends Component {
 
@@ -26,11 +27,11 @@ export default class XCardView extends Component {
         pressTime: 2000,
 
         cardStyle: {
-            marginTop: 5,
-            marginBottom: 5,
-            marginStart: 10,
-            marginEnd: 10,
-            borderRadius: 5,
+            marginTop: x5,
+            marginBottom: x5,
+            marginStart: x10,
+            marginEnd: x10,
+            borderRadius: x5,
             backgroundColor: 'white',
         },
     };

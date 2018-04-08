@@ -4,6 +4,7 @@ import {XBackComponent, XText} from "../widget/component/index";
 import {
     ScreenXCardName,
     ScreenXImageName,
+    ScreenXLoadingName,
     ScreenXModalName,
     ScreenXStatusName,
     ScreenXTextButtonName,
@@ -47,6 +48,10 @@ export default class App extends XBackComponent {
                     <XText
                         onPress={() => this.props.navigation.navigate(ScreenXModalName)}
                         text={'XModal'}
+                        textStyle={styles.item}/>
+                    <XText
+                        onPress={() => this.props.navigation.navigate(ScreenXLoadingName)}
+                        text={'XLoading'}
                         textStyle={styles.item}/>
                 </ScrollView>
             </View>

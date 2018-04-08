@@ -5,3 +5,4 @@ export const ScreenXCardName = 'SimpleXCardScreen';
 export const ScreenXTextButtonName = 'SimpleXTextButtonScreen';
 export const ScreenXStatusName = 'SimpleXStatusScreen';
 export const ScreenXModalName = 'SimpleXModalScreen';
+export const ScreenXLoadingName = 'SimpleXLoadingScreen';

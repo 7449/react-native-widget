@@ -8,6 +8,7 @@ import SimpleXCardScreen from "./SimpleXCardScreen";
 import SimpleXTextButtonScreen from "./SimpleXTextButtonScreen";
 import SimpleXStatusScreen from "./SimpleXStatusScreen";
 import SimpleXModalScreen from "./SimpleXModalScreen";
+import SimpleXLoadingScreen from "./SimpleXLoadingScreen";
 
 
 const RouteConfigs = {
@@ -34,6 +35,9 @@ const RouteConfigs = {
     },
     SimpleXModalScreen: {
         screen: SimpleXModalScreen
+    },
+    SimpleXLoadingScreen: {
+        screen: SimpleXLoadingScreen
     }
 };
 

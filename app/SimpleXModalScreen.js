@@ -13,6 +13,8 @@ export default class SimpleXModalScreen extends XBackComponent {
         return (
             <View>
                 <XModalView onRequestClose={() => {
+                    // android back
+                    this.setState({visibility: !this.state.visibility})
                 }} visibility={this.state.visibility}>
                     <View style={{backgroundColor: 'white', height: '80%', width: '80%'}}>
                         <XText touchOpacityStyle={[{flex: 1}, itemStyle]}

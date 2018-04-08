@@ -7,6 +7,7 @@ import XCardView from "./lib/XCardView";
 import XTextButton from "./lib/XTextButton";
 import XStatusView from "./lib/XStatusView";
 import XModalView from "./lib/XModalView";
+import SimpleModalBottomView from "./lib/simple/SimpleModalBottomView";
 
 export {
     XBackComponent,
@@ -18,6 +19,7 @@ export {
     XTextButton,
     XStatusView,
     XModalView,
+    SimpleModalBottomView,
 };
 
 

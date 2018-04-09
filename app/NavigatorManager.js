@@ -11,6 +11,7 @@ import SimpleXModalScreen from "./SimpleXModalScreen";
 import SimpleXLoadingScreen from "./SimpleXLoadingScreen";
 import SimpleXToolBarScreen from "./SimpleXToolBarScreen";
 import SimpleXFlatListScreen from "./SimpleXFlatListScreen";
+import SimpleXSectionListScreen from "./SimpleXSectionListScreen";
 
 
 const RouteConfigs = {
@@ -46,7 +47,10 @@ const RouteConfigs = {
     },
     SimpleXFlatListScreen: {
         screen: SimpleXFlatListScreen
-    }
+    },
+    SimpleXSectionListScreen: {
+        screen: SimpleXSectionListScreen
+    },
 };
 
 const StackNavigatorConfig = {

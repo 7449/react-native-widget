@@ -1,10 +1,11 @@
 import React from "react";
 import {View} from "react-native";
-import {XBackComponent, XCardView, XFlatList, XText, XTextButton} from "../widget/component/index";
+import {XBackComponent, XCardView, XSectionList, XText, XTextButton} from "../widget/component/index";
 import {EMPTY, LOADING, NORMAL, SUCCESS} from "../widget/component/lib/helper/StringUtils";
 import {height} from "../widget/component/lib/helper/Screen";
+import {x10} from "../widget/component/lib/helper/Dimens";
 
-export default class SimpleXFlatListScreen extends XBackComponent {
+export default class SimpleXSectionListScreen extends XBackComponent {
     state = {
         refreshing: false,
         emptyStatus: NORMAL,
@@ -19,8 +20,7 @@ export default class SimpleXFlatListScreen extends XBackComponent {
     render() {
         return (
             <View>
-                <XFlatList
-                    data={this.state.entity}
+                <XSectionList
                     emptyStatus={this.state.emptyStatus}
                     emptyText={this.state.emptyStatus === EMPTY ? '数据为空' : '网络错误'}
                     emptyIcon={this.state.emptyStatus === EMPTY ? require('../widget/component/lib/ximage/icon_net_empty.png') : require('../widget/component/lib/ximage/icon_net_error.png')}
@@ -32,6 +32,7 @@ export default class SimpleXFlatListScreen extends XBackComponent {
                     // ListHeaderComponent={this.getHeaderView()}
                     // ListFooterComponent={this.getFooterView()}
                     // ListEmptyComponent={this.getEmptyView()}
+                    renderSectionHeader={(section) => this.getSectionHeader(section)}
                     refreshing={this.state.refreshing}
                     onRefresh={this.onRefresh.bind(this)}
                     onLoadMore={this.onLoadMore.bind(this)}
@@ -39,7 +40,8 @@ export default class SimpleXFlatListScreen extends XBackComponent {
                     loadMorePress={() => {
                         console.log("================", '点击重试', "=======================");
                     }}
-                    renderItem={(item) => this.getItemView(item)}/>
+                    renderItem={(item) => this.getItemView(item)}
+                    sections={this.state.entity}/>
             </View>
         )
     }
@@ -97,8 +99,12 @@ export default class SimpleXFlatListScreen extends XBackComponent {
     getItemView = (item) => {
         return <XCardView>
             <XText textStyle={{alignSelf: 'center', padding: 10, margin: 10}}
-                   text={item.item.item + item.index}/>
+                   text={item.item.id.toString() + item.index.toString()}/>
         </XCardView>
+    };
+
+    getSectionHeader = (section) => {
+        return <XText text={section.key} textStyle={{padding: x10}}/>;
     };
 
     onBackPress = () => {
@@ -111,46 +117,21 @@ export default class SimpleXFlatListScreen extends XBackComponent {
         if (this.state.entity.length > 50) {
             return this.state.entity;
         }
-        return this.state.entity.concat([
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-            {'item': `${type}`},
-        ]);
+        return this.state.entity.concat(
+            [
+                {key: "1", data: [{id: 1}]},
+                {key: "2", data: [{id: 2}]},
+                {key: "3", data: [{id: 3}]},
+                {key: "4", data: [{id: 4}]},
+                {key: "5", data: [{id: 5}]},
+                {key: "6", data: [{id: 6}]},
+                {key: "7", data: [{id: 7}]},
+                {key: "8", data: [{id: 8}]},
+                {key: "9", data: [{id: 9}]},
+                {key: "10", data: [{id: 10}]},
+                {key: "11", data: [{id: 11}]},
+                {key: "12", data: [{id: 12}]},
+            ]);
     }
 }
 

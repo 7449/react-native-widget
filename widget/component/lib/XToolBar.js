@@ -7,6 +7,7 @@ import {isNull} from "./helper/StringUtils";
 import XTouchOpacityView from "./XTouchOpacityView";
 import XImage from "./XImage";
 
+// beta
 export default class XToolBar extends Component {
 
     static propTypes = {

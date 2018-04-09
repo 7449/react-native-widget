@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import XTouchOpacityView from "./XTouchOpacityView";
 import PropTypes from "prop-types";
 import {x18} from "./helper/Dimens";
+import {isAndroid} from "./helper/StringUtils";
 
 export default class XTextButton extends Component {
 
@@ -89,14 +90,14 @@ export default class XTextButton extends Component {
         switch (imageOption) {
             case 'top':
                 return <View style={[viewStyle]}>
-                    <Text style={[{fontFamily: fontFamily, fontSize: fontSize}, textStyle]}
+                    <Text style={[{fontFamily: isAndroid() ? fontFamily : null, fontSize: fontSize}, textStyle]}
                           numberOfLines={numberOfLines}>{text}</Text>
                     <Image style={[imageStyle]} source={icon}/>
                 </View>;
             case 'bottom':
                 return <View style={[viewStyle]}>
                     <Image style={[imageStyle]} source={icon}/>
-                    <Text style={[{fontFamily: fontFamily, fontSize: fontSize}, textStyle]}
+                    <Text style={[{fontFamily: isAndroid() ? fontFamily : null, fontSize: fontSize}, textStyle]}
                           numberOfLines={numberOfLines}>{text}</Text>
                 </View>;
             default:

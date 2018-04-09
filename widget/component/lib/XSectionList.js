@@ -7,6 +7,7 @@ import XTextButton from "./XTextButton";
 import PropTypes from "prop-types";
 import {x10, x18} from "./helper/Dimens";
 
+// beta
 export default class XSectionList extends Component {
     static propTypes = {
         style: PropTypes.any,
@@ -137,7 +138,7 @@ export default class XSectionList extends Component {
                     <ActivityIndicator
                         animating={true}
                         color={this.props.loadMoreColor}
-                        size="large"
+                        size="small"
                     />
                     <XText textStyle={this.props.loadMoreStyle} text={'正在加载...'}/>
                 </View>;

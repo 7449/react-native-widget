@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {EMPTY, ERROR, isNull, LOADING, NORMAL, SUCCESS} from "./helper/StringUtils";
 import XText from "./XText";
-import {ActivityIndicator, View} from "react-native";
-import XImage from "./XImage";
+import {ActivityIndicator, Image, Text, View} from "react-native";
+import XTouchOpacityView from "./XTouchOpacityView";
 
 export default class XStatusView extends Component {
 
@@ -67,9 +67,11 @@ export default class XStatusView extends Component {
 
     getEmptyView = () => {
         return <View style={this.props.emptyStyle}>
-            <XImage icon={this.props.emptyImage}/>
-            <XText onPress={this.props.onEmptyPress} text={this.props.emptyText}/>
-        </View>;
+            <XTouchOpacityView onPress={this.props.onEmptyPress}>
+                <Image source={this.props.emptyImage}/>
+                <Text style={{textAlign: 'center'}}>{this.props.emptyText}</Text>
+            </XTouchOpacityView>
+        </View>
     };
     getNormalView = () => {
         return <View style={this.props.normalStyle}>
@@ -77,8 +79,10 @@ export default class XStatusView extends Component {
     };
     getErrorView = () => {
         return <View style={this.props.errorStyle}>
-            <XImage icon={this.props.errorImage}/>
-            <XText onPress={this.props.onErrorPress} text={this.props.errorText}/>
+            <XTouchOpacityView onPress={this.props.onErrorPress}>
+                <Image source={this.props.errorImage}/>
+                <Text style={{textAlign: 'center'}}>{this.props.errorText}</Text>
+            </XTouchOpacityView>
         </View>;
     };
     getLoadingView = () => {
@@ -86,7 +90,7 @@ export default class XStatusView extends Component {
             <ActivityIndicator
                 animating={true}
                 color={this.props.loadingColor}
-                size="large"
+                size="small"
             />
             <XText text={this.props.loadingText}/>
         </View>;

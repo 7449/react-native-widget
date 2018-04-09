@@ -5,7 +5,7 @@ export const screenH = Dimensions.get('window').height;
 
 
 const DEFAULT_DENSITY = 2;
-const w2 = 1080 / DEFAULT_DENSITY;
+const w2 = 380 / DEFAULT_DENSITY;
 
 
 export const height = screenH - StatusBar.currentHeight;

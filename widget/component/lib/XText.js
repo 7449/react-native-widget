@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import XTouchOpacityView from "./XTouchOpacityView";
 import PropTypes from "prop-types";
 import {x18} from "./helper/Dimens";
+import {isAndroid} from "./helper/StringUtils";
 
 export default class XText extends Component {
 
@@ -75,7 +76,7 @@ export default class XText extends Component {
             fontSize,
             text
         } = this.props;
-        return <Text style={[{fontFamily: fontFamily, fontSize: fontSize}, textStyle]}
+        return <Text style={[{fontFamily: isAndroid() ? fontFamily : null, fontSize: fontSize}, textStyle]}
                      numberOfLines={numberOfLines}>{text}</Text>;
     };
 }

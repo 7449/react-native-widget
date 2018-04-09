@@ -9,6 +9,7 @@ import XStatusView from "./lib/XStatusView";
 import XModalView from "./lib/XModalView";
 import XLoadingView from "./lib/XLoadingView";
 import XToolBar from "./lib/XToolBar";
+import XFlatList from "./lib/XFlatList";
 import SimpleModalBottomView from "./lib/simple/SimpleModalBottomView";
 
 export {
@@ -23,6 +24,7 @@ export {
     XStatusView,
     XModalView,
     XLoadingView,
+    XFlatList,
     SimpleModalBottomView,
 };
 

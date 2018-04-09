@@ -12,3 +12,4 @@ export const EMPTY = 'EMPTY';
 export const SUCCESS = 'SUCCESS';
 export const LOADING = 'LOADING';
 export const NORMAL = 'NORMAL';
+export const LOAD_MORE_EMPTY = 'LOAD_MORE_EMPTY';

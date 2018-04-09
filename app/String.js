@@ -7,3 +7,4 @@ export const ScreenXStatusName = 'SimpleXStatusScreen';
 export const ScreenXModalName = 'SimpleXModalScreen';
 export const ScreenXLoadingName = 'SimpleXLoadingScreen';
 export const ScreenXToolBarName = 'SimpleXToolBarScreen';
+export const ScreenXFlatListName = 'SimpleXFlatListScreen';

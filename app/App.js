@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {XBackComponent, XText} from "../widget/component/index";
 import {
     ScreenXCardName,
+    ScreenXFlatListName,
     ScreenXImageName,
     ScreenXLoadingName,
     ScreenXModalName,
@@ -57,6 +58,10 @@ export default class App extends XBackComponent {
                     <XText
                         onPress={() => this.props.navigation.navigate(ScreenXToolBarName)}
                         text={'XToolBar'}
+                        textStyle={styles.item}/>
+                    <XText
+                        onPress={() => this.props.navigation.navigate(ScreenXFlatListName)}
+                        text={'XFlatList'}
                         textStyle={styles.item}/>
                 </ScrollView>
             </View>

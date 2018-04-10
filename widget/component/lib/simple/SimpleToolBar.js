@@ -35,7 +35,7 @@ export default class SimpleToolBar extends Component {
                       leftPress={backPress}
                       centerText={centerText}
                       rightText={rightText}
-                      rightDisabled={isNull(backPress)}
+                      rightDisabled={isNull(rightPress)}
                       rightPress={rightPress}/>
         </View>
     }

@@ -12,6 +12,7 @@ import SimpleXLoadingScreen from "./SimpleXLoadingScreen";
 import SimpleXToolBarScreen from "./SimpleXToolBarScreen";
 import SimpleXFlatListScreen from "./SimpleXFlatListScreen";
 import SimpleXSectionListScreen from "./SimpleXSectionListScreen";
+import SimpleXTabScreen from "./SimpleXTabScreen";
 
 
 const RouteConfigs = {
@@ -50,6 +51,9 @@ const RouteConfigs = {
     },
     SimpleXSectionListScreen: {
         screen: SimpleXSectionListScreen
+    },
+    SimpleXTabScreen: {
+        screen: SimpleXTabScreen
     },
 };
 

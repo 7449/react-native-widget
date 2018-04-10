@@ -14,7 +14,7 @@ export default class XTouchOpacityView extends Component {
         onLongPress: PropTypes.func,
         onPressIn: PropTypes.func,
         onPressOut: PropTypes.func,
-        object: PropTypes.object,
+        object: PropTypes.any,
         touchOpacityStyle: PropTypes.any,
     };
 

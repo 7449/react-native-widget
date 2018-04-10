@@ -8,7 +8,7 @@ import {
     ScreenXLoadingName,
     ScreenXModalName,
     ScreenXSectionListName,
-    ScreenXStatusName,
+    ScreenXStatusName, ScreenXTabName,
     ScreenXTextButtonName,
     ScreenXTextName,
     ScreenXToolBarName,
@@ -67,6 +67,10 @@ export default class App extends XBackComponent {
                     <XText
                         onPress={() => this.props.navigation.navigate(ScreenXSectionListName)}
                         text={'XSectionList'}
+                        textStyle={styles.item}/>
+                    <XText
+                        onPress={() => this.props.navigation.navigate(ScreenXTabName)}
+                        text={'XTab'}
                         textStyle={styles.item}/>
                 </ScrollView>
             </View>

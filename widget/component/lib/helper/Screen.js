@@ -9,7 +9,7 @@ export const screenH = Dimensions.get('window').height;
 const DEFAULT_DENSITY = 2;
 const w2 = 380 / DEFAULT_DENSITY;
 
-export const fixStatusBarHeight = isAndroid() ? 0 : ifIphoneX(50, 20);
+export const fixStatusBarHeight = isAndroid() ? 0 : ifIphoneX(44, 20);
 export const height = screenH - StatusBar.currentHeight;
 export const width = screenW;
 

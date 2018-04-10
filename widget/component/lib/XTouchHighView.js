@@ -14,7 +14,7 @@ export default class XTouchHighView extends Component {
         onLongPress: PropTypes.func,
         onPressIn: PropTypes.func,
         onPressOut: PropTypes.func,
-        object: PropTypes.object,
+        object: PropTypes.any,
         touchHighStyle: PropTypes.any,
     };
 

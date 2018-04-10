@@ -9,7 +9,7 @@ export const isEmpty = (text) => {
 };
 
 export const isAndroid = () => {
-    return Platform.OS === 'android';
+    return Platform.OS === 'android'
 };
 
 export const ERROR = 'ERROR';

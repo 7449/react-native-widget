@@ -11,6 +11,8 @@ import XLoadingView from "./lib/XLoadingView";
 import XToolBar from "./lib/XToolBar";
 import XFlatList from "./lib/XFlatList";
 import XSectionList from "./lib/XSectionList";
+import XTabView from "./lib/XTabView";
+import FaceBookViewPager from "./lib/FaceBookViewPager";
 import SimpleModalBottomView from "./lib/simple/SimpleModalBottomView";
 import SimpleToolBar from "./lib/simple/SimpleToolBar";
 
@@ -27,9 +29,11 @@ export {
     XModalView,
     XLoadingView,
     XFlatList,
+    XTabView,
     XSectionList,
     SimpleModalBottomView,
     SimpleToolBar,
+    FaceBookViewPager,
 };
 
 

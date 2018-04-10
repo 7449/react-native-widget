@@ -1,9 +1,8 @@
-import {Image, Text, View} from 'react-native';
+import {Image, View} from 'react-native';
 import React, {Component} from "react";
 import XTouchOpacityView from "./XTouchOpacityView";
 import PropTypes from "prop-types";
-import {x18} from "./helper/Dimens";
-import {isAndroid} from "./helper/StringUtils";
+import XText from "./XText";
 
 export default class XTextButton extends Component {
 
@@ -23,7 +22,6 @@ export default class XTextButton extends Component {
         text: PropTypes.string,
         textStyle: PropTypes.any,
         fontSize: PropTypes.number,
-        fontFamily: PropTypes.string,
 
         imageStyle: PropTypes.any,
         imageOption: PropTypes.oneOf(['top', 'bottom']),
@@ -38,8 +36,6 @@ export default class XTextButton extends Component {
         pressTime: 2000,
 
         numberOfLines: 1,
-        fontSize: x18,
-        fontFamily: 'newFont',
         imageOption: 'top',
     };
 
@@ -79,7 +75,6 @@ export default class XTextButton extends Component {
         const {
             numberOfLines,
             textStyle,
-            fontFamily,
             fontSize,
             text,
             viewStyle,
@@ -90,15 +85,19 @@ export default class XTextButton extends Component {
         switch (imageOption) {
             case 'top':
                 return <View style={[viewStyle]}>
-                    <Text style={[{fontFamily: isAndroid() ? fontFamily : null, fontSize: fontSize}, textStyle]}
-                          numberOfLines={numberOfLines}>{text}</Text>
+                    <XText disabled={true}
+                           textStyle={textStyle}
+                           fontSize={fontSize}
+                           numberOfLines={numberOfLines} text={text}/>
                     <Image style={[imageStyle]} source={icon}/>
                 </View>;
             case 'bottom':
                 return <View style={[viewStyle]}>
                     <Image style={[imageStyle]} source={icon}/>
-                    <Text style={[{fontFamily: isAndroid() ? fontFamily : null, fontSize: fontSize}, textStyle]}
-                          numberOfLines={numberOfLines}>{text}</Text>
+                    <XText disabled={true}
+                           fontSize={fontSize}
+                           textStyle={textStyle}
+                           numberOfLines={numberOfLines} text={text}/>
                 </View>;
             default:
                 return null;

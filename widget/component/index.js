@@ -12,6 +12,7 @@ import XToolBar from "./lib/XToolBar";
 import XFlatList from "./lib/XFlatList";
 import XSectionList from "./lib/XSectionList";
 import SimpleModalBottomView from "./lib/simple/SimpleModalBottomView";
+import SimpleToolBar from "./lib/simple/SimpleToolBar";
 
 export {
     XBackComponent,
@@ -28,6 +29,7 @@ export {
     XFlatList,
     XSectionList,
     SimpleModalBottomView,
+    SimpleToolBar,
 };
 
 

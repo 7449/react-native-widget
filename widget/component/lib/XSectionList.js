@@ -138,7 +138,7 @@ export default class XSectionList extends Component {
                     <ActivityIndicator
                         animating={true}
                         color={this.props.loadMoreColor}
-                        size="small"
+                        size="large"
                     />
                     <XText textStyle={this.props.loadMoreStyle} text={'正在加载...'}/>
                 </View>;

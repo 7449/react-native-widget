@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {EMPTY, ERROR, isNull, LOADING, NORMAL, SUCCESS} from "./helper/StringUtils";
 import XText from "./XText";
-import {ActivityIndicator, Image, Text, View} from "react-native";
+import {ActivityIndicator, Image, View} from "react-native";
 import XTouchOpacityView from "./XTouchOpacityView";
 
 export default class XStatusView extends Component {
@@ -69,7 +69,7 @@ export default class XStatusView extends Component {
         return <View style={this.props.emptyStyle}>
             <XTouchOpacityView onPress={this.props.onEmptyPress}>
                 <Image source={this.props.emptyImage}/>
-                <Text style={{textAlign: 'center'}}>{this.props.emptyText}</Text>
+                <XText disabled={true} text={this.props.emptyText} textStyle={{textAlign: 'center'}}/>
             </XTouchOpacityView>
         </View>
     };
@@ -81,7 +81,7 @@ export default class XStatusView extends Component {
         return <View style={this.props.errorStyle}>
             <XTouchOpacityView onPress={this.props.onErrorPress}>
                 <Image source={this.props.errorImage}/>
-                <Text style={{textAlign: 'center'}}>{this.props.errorText}</Text>
+                <XText disabled={true} text={this.props.errorText} textStyle={{textAlign: 'center'}}/>
             </XTouchOpacityView>
         </View>;
     };
@@ -90,9 +90,9 @@ export default class XStatusView extends Component {
             <ActivityIndicator
                 animating={true}
                 color={this.props.loadingColor}
-                size="small"
+                size="large"
             />
-            <XText text={this.props.loadingText}/>
+            <XText disabled={true} text={this.props.loadingText}/>
         </View>;
     };
 }

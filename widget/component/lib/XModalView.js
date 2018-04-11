@@ -1,6 +1,8 @@
-import {Modal, View} from 'react-native';
+import {Modal, TouchableWithoutFeedback, View} from 'react-native';
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import {screenH, screenW} from "./helper/Screen";
+import {isNull} from "./helper/StringUtils";
 
 export default class XModalView extends Component {
 
@@ -9,6 +11,7 @@ export default class XModalView extends Component {
         visibility: PropTypes.bool,
         transparent: PropTypes.bool,
         onRequestClose: PropTypes.func.isRequired,
+        onPress: PropTypes.func,
         childViewStyle: PropTypes.any,
     };
 
@@ -22,18 +25,29 @@ export default class XModalView extends Component {
             flex: 1,
             backgroundColor: 'rgba(0,0,0,0.5)',
         },
+        viewStyle: {
+            position: 'absolute',
+            width: screenW,
+            height: screenH,
+        },
     };
 
 
     render() {
-        const {animationType, visibility, transparent, onRequestClose, childViewStyle} = this.props;
+        const {animationType, visibility, transparent, onRequestClose, childViewStyle, onPress, viewStyle} = this.props;
         return (
             <Modal
                 visible={visibility}
                 animationType={animationType}
                 transparent={transparent}
                 onRequestClose={onRequestClose}>
-                <View style={childViewStyle}>{this.props.children}</View>
+                <View style={childViewStyle}>
+                    {isNull(onPress) ? null :
+                        <TouchableWithoutFeedback onPress={onPress}>
+                            <View style={viewStyle}/>
+                        </TouchableWithoutFeedback>}
+                    {this.props.children}
+                </View>
             </Modal>
         )
     }

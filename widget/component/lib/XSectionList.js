@@ -5,7 +5,7 @@ import {EMPTY, ERROR, isNull, LOAD_MORE_EMPTY, LOADING, NORMAL, SUCCESS} from ".
 import XText from "./XText";
 import XTextButton from "./XTextButton";
 import PropTypes from "prop-types";
-import {x10, x18} from "./helper/Dimens";
+import {x10, x16} from "./helper/Dimens";
 
 // beta
 export default class XSectionList extends Component {
@@ -51,7 +51,7 @@ export default class XSectionList extends Component {
 
         loadMoreStyle: {
             textAlign: 'center',
-            fontSize: x18,
+            fontSize: x16,
             padding: x10,
         },
         loadMoreColor: 'gray',
@@ -138,7 +138,7 @@ export default class XSectionList extends Component {
                     <ActivityIndicator
                         animating={true}
                         color={this.props.loadMoreColor}
-                        size="large"
+                        size="small"
                     />
                     <XText textStyle={this.props.loadMoreStyle} text={'正在加载...'}/>
                 </View>;

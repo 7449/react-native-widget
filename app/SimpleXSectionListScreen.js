@@ -14,7 +14,7 @@ export default class SimpleXSectionListScreen extends XBackComponent {
     };
 
     componentDidMount() {
-        this.setState({refreshing: true}, () => this.onRefresh());
+        this.onRefresh()
     }
 
     render() {

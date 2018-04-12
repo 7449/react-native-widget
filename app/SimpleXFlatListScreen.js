@@ -13,7 +13,7 @@ export default class SimpleXFlatListScreen extends XBackComponent {
     };
 
     componentDidMount() {
-        this.setState({refreshing: true}, () => this.onRefresh());
+        this.onRefresh()
     }
 
     render() {

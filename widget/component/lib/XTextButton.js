@@ -31,11 +31,6 @@ export default class XTextButton extends Component {
     };
 
     static defaultProps = {
-        disabled: false,
-        activeOpacity: 0.8,
-        pressTime: 2000,
-
-        numberOfLines: 1,
         imageOption: 'top',
     };
 

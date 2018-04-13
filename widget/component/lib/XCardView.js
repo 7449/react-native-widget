@@ -22,10 +22,6 @@ export default class XCardView extends Component {
     };
 
     static defaultProps = {
-        disabled: false,
-        activeOpacity: 0.8,
-        pressTime: 2000,
-
         cardStyle: {
             marginTop: x5,
             marginBottom: x5,

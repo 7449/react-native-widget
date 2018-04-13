@@ -27,10 +27,6 @@ export default class XText extends Component {
     };
 
     static defaultProps = {
-        disabled: false,
-        activeOpacity: 0.8,
-        pressTime: 2000,
-
         numberOfLines: 1,
         fontSize: x18,
         fontFamily: 'newFont',

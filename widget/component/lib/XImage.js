@@ -21,11 +21,7 @@ export default class XImage extends Component {
         icon: PropTypes.any,
     };
 
-    static defaultProps = {
-        disabled: false,
-        activeOpacity: 0.8,
-        pressTime: 2000,
-    };
+    static defaultProps = {};
 
     render() {
         return !this.props.disabled ? this.getTouchImage() : this.getImage();

@@ -8,12 +8,14 @@ import {
     ScreenXLoadingName,
     ScreenXModalName,
     ScreenXSectionListName,
-    ScreenXStatusName, ScreenXTabName,
+    ScreenXStatusName,
+    ScreenXTabName,
     ScreenXTextButtonName,
     ScreenXTextName,
     ScreenXToolBarName,
     ScreenXTouchName
 } from "./String";
+import {screenW} from "../widget/component/lib/helper/Screen";
 
 export default class App extends XBackComponent {
     render() {
@@ -23,6 +25,9 @@ export default class App extends XBackComponent {
                 <ScrollView>
                     <XText
                         text={'XBackComponent'}
+                        textStyle={styles.item}/>
+                    <XText
+                        text={'XTag'}
                         textStyle={styles.item}/>
                     <XText
                         onPress={() => this.props.navigation.navigate(ScreenXTouchName)}
@@ -92,11 +97,11 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     item: {
-        padding: 10,
-        margin: 10,
         alignItems: 'center',
+        marginBottom: 10,
+        padding: 10,
         backgroundColor: 'gray',
-        width: 500,
+        width: screenW,
         fontSize: 20,
         color: 'white',
     },

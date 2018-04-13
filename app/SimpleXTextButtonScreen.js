@@ -1,5 +1,5 @@
 import React from "react";
-import {ScrollView, StyleSheet} from "react-native";
+import {ScrollView} from "react-native";
 import {XBackComponent} from "../widget/component/index";
 import XTextButton from "../widget/component/lib/XTextButton";
 
@@ -49,9 +49,3 @@ export default class SimpleXTextButtonScreen extends XBackComponent {
     }
 }
 
-const styles = StyleSheet.create({
-    content: {
-        textAlign: 'center',
-        fontSize: 18,
-    },
-});

@@ -1,36 +1,17 @@
 import React from "react";
-import {Alert, View} from "react-native";
-import {XBackComponent, XText, XTouchHighView, XTouchOpacityView} from "../widget/component/index";
+import {View} from "react-native";
+import {XBackComponent, XText} from "../widget/component/index";
 import {itemStyle} from "./Style";
+import {ScreenXTextName} from "./String";
 
 export default class SimpleXTouchScreen extends XBackComponent {
 
     render() {
         return (
             <View>
-                <XTouchOpacityView
-                    activeOpacity={0.4}
-                    pressTime={2000}
-                    pressTimePress={() => {
-                        Alert.alert('', '请勿快速重复点击')
-                    }}
-                    touchOpacityStyle={itemStyle}>
-                    <XText text={'XTouchOpacityView'}/>
-                </XTouchOpacityView>
-                <XTouchHighView
-                    underlayColor={'blue'}
-                    pressTime={2000}
-                    pressTimePress={() => {
-                        Alert.alert('', '请勿快速重复点击')
-                    }}
-                    touchHighStyle={itemStyle}>
-                    <XText text={'XTouchHighView'}/>
-                </XTouchHighView>
-                <XTouchHighView
-                    disabled={true}
-                    touchHighStyle={itemStyle}>
-                    <XText text={' NO TOUCH XTouchHighView'}/>
-                </XTouchHighView>
+                <XText touchOpacityStyle={itemStyle}
+                       onPress={() => this.props.navigation.navigate(ScreenXTextName)}
+                       textStyle={{textAlign: 'center', fontSize: 18}} text={'go XText'}/>
             </View>
         )
     }

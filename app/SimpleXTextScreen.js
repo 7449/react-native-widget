@@ -1,6 +1,6 @@
 import React from "react";
 import {StyleSheet, View} from "react-native";
-import {XBackComponent, XText, XTouchHighView} from "../widget/component/index";
+import {XBackComponent, XText} from "../widget/component/index";
 import {itemStyle} from "./Style";
 
 export default class SimpleXTextScreen extends XBackComponent {
@@ -9,15 +9,12 @@ export default class SimpleXTextScreen extends XBackComponent {
         return (
             <View>
                 <View style={itemStyle}>
-                    <XText textStyle={styles.content} text={'NO TOUCH XText'}/>
+                    <XText disabled={true} textStyle={styles.content} text={'NO TOUCH XText'}/>
                 </View>
-                <XText
-                    touchOpacityStyle={itemStyle} textStyle={styles.content} text={'Touch Opacity XText'}/>
-                <XTouchHighView
-                    touchHighStyle={itemStyle}
-                    underlayColor={'blue'}>
-                    <XText text={'Touch High XText'} textStyle={styles.content}/>
-                </XTouchHighView>
+                <XText touchOpacityStyle={itemStyle} textStyle={styles.content} text={'Touch Opacity XText'}/>
+                <XText underlayColor={'blue'}
+                       touchHighStyle={itemStyle}
+                       type={'high'} text={'Touch High XText'} textStyle={styles.content}/>
             </View>
         )
     }

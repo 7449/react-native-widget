@@ -4,6 +4,7 @@ import XTouchOpacityView from "./XTouchOpacityView";
 import PropTypes from "prop-types";
 import {x18} from "./helper/Dimens";
 import {isAndroid} from "./helper/StringUtils";
+import XTouchHighView from "./XTouchHighView";
 
 export default class XText extends Component {
 
@@ -24,19 +25,65 @@ export default class XText extends Component {
         textStyle: PropTypes.any,
         fontSize: PropTypes.number,
         fontFamily: PropTypes.string,
+
+        type: PropTypes.oneOf(['opacity', 'high']),
+
+        underlayColor: PropTypes.string,
+        touchHighStyle: PropTypes.any,
     };
 
     static defaultProps = {
         numberOfLines: 1,
         fontSize: x18,
         fontFamily: 'newFont',
+        type: 'opacity',
     };
 
     render() {
-        return !this.props.disabled ? this.getTouchText() : this.getText();
+        if (this.props.disabled) return this.getText();
+        let type = this.props.type;
+        switch (type) {
+            case 'opacity':
+                return this.getTouchOpacityText();
+            case 'high':
+                return this.getTouchHighText();
+            default:
+                return null;
+        }
     }
 
-    getTouchText = () => {
+
+    getTouchHighText = () => {
+        const {
+            disabled,
+            underlayColor,
+            pressTime,
+            pressTimePress,
+            onPress,
+            onLongPress,
+            onPressIn,
+            onPressOut,
+            object,
+            touchHighStyle,
+        } = this.props;
+        return <XTouchHighView
+            disabled={disabled}
+            underlayColor={underlayColor}
+            pressTimePress={pressTimePress}
+            pressTime={pressTime}
+            onPress={onPress}
+            onLongPress={onLongPress}
+            onPressIn={onPressIn}
+            onPressOut={onPressOut}
+            object={object}
+            touchHighStyle={touchHighStyle}
+        >
+            {this.getText()}
+        </XTouchHighView>
+    };
+
+
+    getTouchOpacityText = () => {
         const {
             disabled,
             activeOpacity,

@@ -1,11 +1,12 @@
 import React, {Component} from "react";
-import {View} from "react-native";
+import {StatusBar, View} from "react-native";
 import PropTypes from "prop-types";
 import {x10, x48} from "./helper/Dimens";
 import XText from "./XText";
 import {isNull} from "./helper/StringUtils";
 import XTouchOpacityView from "./XTouchOpacityView";
 import XImage from "./XImage";
+import {fixStatusBarHeight, width} from "./helper/Screen";
 
 // beta
 export default class XToolBar extends Component {
@@ -15,6 +16,9 @@ export default class XToolBar extends Component {
         leftView: PropTypes.element,
         centerView: PropTypes.element,
         rightView: PropTypes.element,
+
+        viewStyle: PropTypes.any,
+        containerStyle: PropTypes.any,
 
         showLeftView: PropTypes.bool,
         showCenterView: PropTypes.bool,
@@ -73,6 +77,8 @@ export default class XToolBar extends Component {
         rightTextStyle: PropTypes.any,
         rightFontSize: PropTypes.number,
         rightFontFamily: PropTypes.string,
+
+        barStyle: PropTypes.oneOf(['default', 'light-content', 'dark-content'])
     };
 
     static defaultProps = {
@@ -93,12 +99,12 @@ export default class XToolBar extends Component {
         // rightIcon: require('./ximage/icon_temp.png'),
 
 
+        containerStyle: {},
         viewStyle: {
             flexDirection: 'row',
             height: x48,
             alignItems: 'center',
             justifyContent: 'space-between',
-            backgroundColor: 'white',
         },
         leftStyle: {
             marginStart: x10,
@@ -114,15 +120,18 @@ export default class XToolBar extends Component {
             flexDirection: 'row',
             alignItems: 'center',
         },
+        barStyle: 'default',
     };
 
-
     render() {
-        const {viewStyle, leftView, centerView, rightView, showLeftView, showCenterView, showRightView} = this.props;
-        return <View style={viewStyle}>
-            {!showLeftView ? this.getEmptyView() : isNull(leftView) ? this.getLeftView() : leftView}
-            {!showCenterView ? this.getEmptyView() : isNull(centerView) ? this.getCenterView() : centerView}
-            {!showRightView ? this.getEmptyView() : isNull(rightView) ? this.getRightView() : rightView}
+        const {containerStyle, viewStyle, barStyle, leftView, centerView, rightView, showLeftView, showCenterView, showRightView} = this.props;
+        return <View style={[{paddingTop: fixStatusBarHeight, backgroundColor: 'white', width: width}, containerStyle]}>
+            <StatusBar barStyle={barStyle}/>
+            <View style={viewStyle}>
+                {!showLeftView ? this.getEmptyView() : isNull(leftView) ? this.getLeftView() : leftView}
+                {!showCenterView ? this.getEmptyView() : isNull(centerView) ? this.getCenterView() : centerView}
+                {!showRightView ? this.getEmptyView() : isNull(rightView) ? this.getRightView() : rightView}
+            </View>
         </View>;
     }
 

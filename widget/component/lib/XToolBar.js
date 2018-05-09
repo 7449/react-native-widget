@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {StatusBar, View} from "react-native";
 import PropTypes from "prop-types";
-import {x10, x48} from "./helper/Dimens";
+import {x10, x100, x48} from "./helper/Dimens";
 import XText from "./XText";
 import {isNull} from "./helper/StringUtils";
 import XTouchOpacityView from "./XTouchOpacityView";
@@ -107,6 +107,7 @@ export default class XToolBar extends Component {
             justifyContent: 'space-between',
         },
         leftStyle: {
+            width: x100,
             marginStart: x10,
             flexDirection: 'row',
             alignItems: 'center',
@@ -114,10 +115,13 @@ export default class XToolBar extends Component {
         centerStyle: {
             flexDirection: 'row',
             alignItems: 'center',
+            justifyContent: 'center',
         },
         rightStyle: {
+            width: x100,
             marginEnd: x10,
             flexDirection: 'row',
+            justifyContent: 'flex-end',
             alignItems: 'center',
         },
         barStyle: 'default',
@@ -158,26 +162,28 @@ export default class XToolBar extends Component {
             leftIcon,
             leftIconStyle,
         } = this.props;
-        return <XTouchOpacityView
-            disabled={leftDisabled}
-            activeOpacity={leftActiveOpacity}
-            pressTime={leftPressTime}
-            pressTimePress={leftPressTimePress}
-            onPress={leftPress}
-            onLongPress={leftLongPress}
-            object={leftObject}
-            touchOpacityStyle={leftTouchOpacityStyle}>
-            <View style={this.props.leftStyle}>
-                <XImage icon={leftIcon} imageStyle={leftIconStyle} disabled={true}/>
-                <XText
-                    disabled={true}
-                    numberOfLines={leftNumberOfLines}
-                    textStyle={leftTextStyle}
-                    fontSize={leftFontSize}
-                    fontFamily={leftFontFamily}
-                    text={leftText}/>
-            </View>
-        </XTouchOpacityView>
+        return <View style={this.props.leftStyle}>
+            <XTouchOpacityView
+                disabled={leftDisabled}
+                activeOpacity={leftActiveOpacity}
+                pressTime={leftPressTime}
+                pressTimePress={leftPressTimePress}
+                onPress={leftPress}
+                onLongPress={leftLongPress}
+                object={leftObject}
+                touchOpacityStyle={leftTouchOpacityStyle}>
+                <View style={{flexDirection: 'row'}}>
+                    <XImage icon={leftIcon} imageStyle={leftIconStyle} disabled={true}/>
+                    <XText
+                        disabled={true}
+                        numberOfLines={leftNumberOfLines}
+                        textStyle={leftTextStyle}
+                        fontSize={leftFontSize}
+                        fontFamily={leftFontFamily}
+                        text={leftText}/>
+                </View>
+            </XTouchOpacityView>
+        </View>
     };
 
     getRightView = () => {
@@ -199,26 +205,28 @@ export default class XToolBar extends Component {
             rightIcon,
             rightIconStyle,
         } = this.props;
-        return <XTouchOpacityView
-            disabled={rightDisabled}
-            activeOpacity={rightActiveOpacity}
-            pressTime={rightPressTime}
-            pressTimePress={rightPressTimePress}
-            onPress={rightPress}
-            onLongPress={rightLongPress}
-            object={rightObject}
-            touchOpacityStyle={rightTouchOpacityStyle}>
-            <View style={this.props.rightStyle}>
-                <XImage icon={rightIcon} imageStyle={rightIconStyle} disabled={true}/>
-                <XText
-                    disabled={true}
-                    numberOfLines={rightNumberOfLines}
-                    textStyle={rightTextStyle}
-                    fontSize={rightFontSize}
-                    fontFamily={rightFontFamily}
-                    text={rightText}/>
-            </View>
-        </XTouchOpacityView>
+        return <View style={this.props.rightStyle}>
+            <XTouchOpacityView
+                disabled={rightDisabled}
+                activeOpacity={rightActiveOpacity}
+                pressTime={rightPressTime}
+                pressTimePress={rightPressTimePress}
+                onPress={rightPress}
+                onLongPress={rightLongPress}
+                object={rightObject}
+                touchOpacityStyle={rightTouchOpacityStyle}>
+                <View style={{flexDirection: 'row'}}>
+                    <XImage icon={rightIcon} imageStyle={rightIconStyle} disabled={true}/>
+                    <XText
+                        disabled={true}
+                        numberOfLines={rightNumberOfLines}
+                        textStyle={rightTextStyle}
+                        fontSize={rightFontSize}
+                        fontFamily={rightFontFamily}
+                        text={rightText}/>
+                </View>
+            </XTouchOpacityView>
+        </View>
     };
 
     getCenterView = () => {
@@ -240,26 +248,28 @@ export default class XToolBar extends Component {
             centerIcon,
             centerIconStyle,
         } = this.props;
-        return <XTouchOpacityView
-            disabled={centerDisabled}
-            activeOpacity={centerActiveOpacity}
-            pressTime={centerPressTime}
-            pressTimePress={centerPressTimePress}
-            onPress={centerPress}
-            onLongPress={centerLongPress}
-            object={centerObject}
-            touchOpacityStyle={centerTouchOpacityStyle}>
-            <View style={this.props.centerStyle}>
-                <XImage icon={centerIcon} imageStyle={centerIconStyle} disabled={true}/>
-                <XText
-                    disabled={true}
-                    numberOfLines={centerNumberOfLines}
-                    textStyle={centerTextStyle}
-                    fontSize={centerFontSize}
-                    fontFamily={centerFontFamily}
-                    text={centerText}/>
-            </View>
-        </XTouchOpacityView>
+        return <View style={this.props.centerStyle}>
+            <XTouchOpacityView
+                disabled={centerDisabled}
+                activeOpacity={centerActiveOpacity}
+                pressTime={centerPressTime}
+                pressTimePress={centerPressTimePress}
+                onPress={centerPress}
+                onLongPress={centerLongPress}
+                object={centerObject}
+                touchOpacityStyle={centerTouchOpacityStyle}>
+                <View style={{flexDirection: 'row'}}>
+                    <XImage icon={centerIcon} imageStyle={centerIconStyle} disabled={true}/>
+                    <XText
+                        disabled={true}
+                        numberOfLines={centerNumberOfLines}
+                        textStyle={centerTextStyle}
+                        fontSize={centerFontSize}
+                        fontFamily={centerFontFamily}
+                        text={centerText}/>
+                </View>
+            </XTouchOpacityView>
+        </View>
     };
 }
 

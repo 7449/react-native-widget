@@ -117,9 +117,27 @@ export default class XText extends Component {
             textStyle,
             fontFamily,
             fontSize,
-            text
+            text,
         } = this.props;
         return <Text style={[{fontFamily: isAndroid() ? fontFamily : null, fontSize: fontSize}, textStyle]}
                      numberOfLines={numberOfLines}>{text}</Text>;
     };
+
+    getSuperText = () => {
+        const {
+            numberOfLines,
+            textStyle,
+            fontFamily,
+            fontSize,
+            text,
+            disabled,
+            onPress,
+            onLongPress
+        } = this.props;
+        return <Text style={[{fontFamily: isAndroid() ? fontFamily : null, fontSize: fontSize}, textStyle]}
+                     disabled={disabled}
+                     onPress={onPress}
+                     onLongPress={onLongPress}
+                     numberOfLines={numberOfLines}>{text}</Text>;
+    }
 }

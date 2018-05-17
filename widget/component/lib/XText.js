@@ -40,7 +40,7 @@ export default class XText extends Component {
     };
 
     render() {
-        if (this.props.disabled) return this.getText();
+        if (this.props.disabled || !this.props.onPress) return this.getText();
         let type = this.props.type;
         switch (type) {
             case 'opacity':

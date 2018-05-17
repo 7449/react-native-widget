@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 import XTouchOpacityView from "./XTouchOpacityView";
 import {x10, x5} from "./helper/Dimens";
+import XTouchHighView from "./XTouchHighView";
 
 export default class XCardView extends Component {
 
@@ -19,6 +20,11 @@ export default class XCardView extends Component {
         touchOpacityStyle: PropTypes.any,
 
         cardStyle: PropTypes.any,
+
+        type: PropTypes.oneOf(['opacity', 'high']),
+
+        underlayColor: PropTypes.string,
+        touchHighStyle: PropTypes.any,
     };
 
     static defaultProps = {
@@ -28,15 +34,24 @@ export default class XCardView extends Component {
             marginStart: x10,
             marginEnd: x10,
             borderRadius: x5,
-            backgroundColor: 'white',
         },
+        type: 'opacity',
+        underlayColor: '#E9ECF4',
     };
 
     render() {
-        return !this.props.disabled ? this.getTouchCard() : this.getCard();
+        let type = this.props.type;
+        switch (type) {
+            case 'opacity':
+                return this.getTouchOpacityCard();
+            case 'high':
+                return this.getTouchHighCard();
+            default:
+                return this.getCard();
+        }
     }
 
-    getTouchCard = () => {
+    getTouchOpacityCard = () => {
         const {
             disabled,
             activeOpacity,
@@ -63,6 +78,36 @@ export default class XCardView extends Component {
             {this.getCard()}
         </XTouchOpacityView>;
     };
+
+    getTouchHighCard = () => {
+        const {
+            disabled,
+            underlayColor,
+            pressTime,
+            pressTimePress,
+            onPress,
+            onLongPress,
+            onPressIn,
+            onPressOut,
+            object,
+            touchHighStyle,
+        } = this.props;
+        return <XTouchHighView
+            disabled={disabled}
+            underlayColor={underlayColor}
+            pressTimePress={pressTimePress}
+            pressTime={pressTime}
+            onPress={onPress}
+            onLongPress={onLongPress}
+            onPressIn={onPressIn}
+            onPressOut={onPressOut}
+            object={object}
+            touchHighStyle={touchHighStyle}
+        >
+            {this.getCard()}
+        </XTouchHighView>
+    };
+
 
     getCard = () => {
         const {cardStyle} = this.props;

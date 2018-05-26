@@ -15,7 +15,7 @@ import {
     ScreenXToolBarName,
     ScreenXTouchName
 } from "./String";
-import {screenW} from "../widget/component/lib/helper/Screen";
+import {fixStatusBarHeight, screenW} from "../widget/component/lib/helper/Screen";
 
 export default class App extends XBackComponent {
     render() {
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: 'white',
+        paddingTop: fixStatusBarHeight,
     },
     title: {
         padding: 10,

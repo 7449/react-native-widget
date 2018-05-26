@@ -47,10 +47,12 @@ export default class XFlatList extends Component {
         loadMoreErrorText: PropTypes.string,
         loadMoreEmptyText: PropTypes.string,
         loadMoreSuccessText: PropTypes.string,
+        loadMoreSwitch: PropTypes.bool,
     };
 
     static defaultProps = {
         showsVerticalScrollIndicator: true,
+        loadMoreSwitch: true,
         emptyText: '暂无数据',
         emptyIcon: require('./ximage/icon_net_empty.png'),
         emptyStatus: NORMAL,
@@ -91,6 +93,7 @@ export default class XFlatList extends Component {
             emptyStatus,
             loadMorePress,
             loadMoreStatus,
+            loadMoreSwitch,
         } = this.props;
         return (
             <FlatList
@@ -119,7 +122,7 @@ export default class XFlatList extends Component {
                 keyExtractor={(item, index) => keyExtractor(item, index)}
                 renderItem={(item) => renderItem(item)}
                 numColumns={numColumns}
-                onEndReachedThreshold={0.1}
+                onEndReachedThreshold={loadMoreSwitch ? 0.1 : -1}
                 onEndReached={onLoadMore}
                 onRefresh={onRefresh}
                 refreshing={refreshing}

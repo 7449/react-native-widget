@@ -2,12 +2,13 @@ import React from "react";
 import {StyleSheet, View} from "react-native";
 import {XBackComponent, XText} from "../widget/component/index";
 import {itemStyle} from "./Style";
+import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
 
 export default class SimpleXTextScreen extends XBackComponent {
 
     render() {
         return (
-            <View>
+            <View style={{paddingTop: fixStatusBarHeight}}>
                 <View style={itemStyle}>
                     <XText disabled={true} textStyle={styles.content} text={'NO TOUCH XText'}/>
                 </View>

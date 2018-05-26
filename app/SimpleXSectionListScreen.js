@@ -2,7 +2,7 @@ import React from "react";
 import {View} from "react-native";
 import {XBackComponent, XCardView, XSectionList, XText, XTextButton} from "../widget/component/index";
 import {EMPTY, LOADING, NORMAL, SUCCESS} from "../widget/component/lib/helper/StringUtils";
-import {height} from "../widget/component/lib/helper/Screen";
+import {fixStatusBarHeight, height} from "../widget/component/lib/helper/Screen";
 import {x10} from "../widget/component/lib/helper/Dimens";
 
 export default class SimpleXSectionListScreen extends XBackComponent {
@@ -19,7 +19,7 @@ export default class SimpleXSectionListScreen extends XBackComponent {
 
     render() {
         return (
-            <View>
+            <View style={{paddingTop: fixStatusBarHeight}}>
                 <XSectionList
                     emptyStatus={this.state.emptyStatus}
                     emptyText={this.state.emptyStatus === EMPTY ? '数据为空' : '网络错误'}

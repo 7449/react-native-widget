@@ -2,6 +2,7 @@ import React from "react";
 import {SimpleModalBottomView, XBackComponent, XModalView, XText} from "../widget/component/index";
 import {View} from "react-native";
 import {itemStyle} from "./Style";
+import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
 
 export default class SimpleXModalScreen extends XBackComponent {
 
@@ -11,7 +12,7 @@ export default class SimpleXModalScreen extends XBackComponent {
 
     render() {
         return (
-            <View>
+            <View style={{paddingTop: fixStatusBarHeight}}>
                 <XModalView onRequestClose={() => {
                     // android back
                     this.setState({visibility: !this.state.visibility})

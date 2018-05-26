@@ -2,7 +2,7 @@ import {View} from 'react-native';
 import React, {Component} from "react";
 import XText from "../XText";
 import PropTypes from "prop-types";
-import {x10, x20, x8} from "../helper/Dimens";
+import {x10, x6} from "../helper/Dimens";
 
 export default class SimpleModalBottomView extends Component {
 
@@ -22,19 +22,17 @@ export default class SimpleModalBottomView extends Component {
         cancelText: '取消',
         okStyle: {
             color: 'gray',
-            padding: x8,
-            margin: x10
+            margin: x6,
         },
         cancelStyle: {
             color: 'gray',
-            padding: x8,
-            margin: x10
+            margin: x6,
         },
         viewStyle: {
             flexDirection: 'row',
             alignSelf: 'flex-end',
-            marginTop: x20,
-            marginEnd: x20
+            marginTop: x10,
+            marginEnd: x10
         },
     };
 
@@ -42,11 +40,20 @@ export default class SimpleModalBottomView extends Component {
         const {okPress, cancelPress, okText, cancelText, okStyle, cancelStyle, viewStyle} = this.props;
         return (
             <View style={viewStyle}>
-                <XText onPress={cancelPress} textStyle={cancelStyle} text={cancelText}/>
-                <XText onPress={okPress} textStyle={okStyle} text={okText}/>
+                <XText type={'high'}
+                       touchHighStyle={{margin: x6}}
+                       underlayColor={'#F5F6FA'}
+                       onPress={cancelPress}
+                       textStyle={cancelStyle}
+                       text={cancelText}/>
+                <XText type={'high'}
+                       underlayColor={'#F5F6FA'}
+                       touchHighStyle={{margin: x6}}
+                       onPress={okPress}
+                       textStyle={okStyle}
+                       text={okText}/>
             </View>
         )
     }
 
 }
-

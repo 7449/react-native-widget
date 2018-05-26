@@ -2,7 +2,7 @@ import React from "react";
 import {View} from "react-native";
 import {XBackComponent, XCardView, XFlatList, XText, XTextButton} from "../widget/component/index";
 import {EMPTY, LOADING, NORMAL, SUCCESS} from "../widget/component/lib/helper/StringUtils";
-import {height} from "../widget/component/lib/helper/Screen";
+import {fixStatusBarHeight, height} from "../widget/component/lib/helper/Screen";
 
 export default class SimpleXFlatListScreen extends XBackComponent {
     state = {
@@ -18,7 +18,7 @@ export default class SimpleXFlatListScreen extends XBackComponent {
 
     render() {
         return (
-            <View>
+            <View style={{paddingTop: fixStatusBarHeight}}>
                 <XFlatList
                     data={this.state.entity}
                     emptyStatus={this.state.emptyStatus}

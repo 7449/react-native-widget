@@ -1,6 +1,5 @@
 import React from "react";
 import {XBackComponent, XToolBar} from "../widget/component/index";
-import {x10} from "../widget/component/lib/helper/Dimens";
 import {View} from "react-native";
 import XText from "../widget/component/lib/XText";
 

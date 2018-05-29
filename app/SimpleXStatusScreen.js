@@ -2,6 +2,7 @@ import React from "react";
 import {View} from "react-native";
 import {XBackComponent, XStatusView, XText} from "../widget/component/index";
 import {EMPTY, ERROR, LOADING, NORMAL, SUCCESS} from "../widget/component/lib/helper/StringUtils";
+import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
 
 export default class SimpleXStatusScreen extends XBackComponent {
 
@@ -10,7 +11,7 @@ export default class SimpleXStatusScreen extends XBackComponent {
     };
 
     render() {
-        return <View style={{flex: 1}}>
+        return <View style={{flex: 1, paddingTop: fixStatusBarHeight, paddingBottom: fixStatusBarHeight}}>
             <XStatusView status={this.state.status} normalView={this.getNormalView()}>
                 <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
                     <XText text={SUCCESS}/>

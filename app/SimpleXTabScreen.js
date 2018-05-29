@@ -1,6 +1,7 @@
 import React from "react";
 import {View} from "react-native";
 import {XBackComponent, XText, XTabView, FaceBookViewPager} from "../widget/component/index";
+import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
 
 export default class SimpleXTabScreen extends XBackComponent {
     state = {
@@ -8,7 +9,7 @@ export default class SimpleXTabScreen extends XBackComponent {
     };
 
     render() {
-        return <View style={{flex: 1}}>
+        return <View style={{flex: 1, paddingTop: fixStatusBarHeight}}>
             <XTabView
                 tab={['一', '二', '三三三', '四', '五', '六', '七', '八', '九']}
                 selectIndex={this.state.selectIndex}

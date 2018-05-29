@@ -1,7 +1,6 @@
 import {Modal, TouchableWithoutFeedback, View} from 'react-native';
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import {screenH, screenW} from "./helper/Screen";
 import {isNull} from "./helper/StringUtils";
 
 export default class XModalView extends Component {
@@ -27,8 +26,8 @@ export default class XModalView extends Component {
         },
         viewStyle: {
             position: 'absolute',
-            width: screenW,
-            height: screenH,
+            width: '100%',
+            height: '100%',
         },
     };
 

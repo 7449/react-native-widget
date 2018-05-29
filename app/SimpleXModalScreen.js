@@ -13,12 +13,26 @@ export default class SimpleXModalScreen extends XBackComponent {
     render() {
         return (
             <View style={{paddingTop: fixStatusBarHeight}}>
-                <XModalView onRequestClose={() => {
-                    // android back
-                    this.setState({visibility: !this.state.visibility})
-                }} visibility={this.state.visibility}>
-                    <View style={{backgroundColor: 'white', height: '80%', width: '80%'}}>
-                        <XText touchOpacityStyle={[{flex: 1}, itemStyle]}
+                <XModalView
+                    onPress={() => {
+                        console.log('=======================', 'press', '=====================');
+                        this.setState({visibility: !this.state.visibility})
+                    }}
+                    onRequestClose={() => {
+                        // android back
+                        this.setState({visibility: !this.state.visibility})
+                    }}
+                    childViewStyle={{
+                        flex: 1,
+                        marginTop: 100,
+                        backgroundColor: 'rgba(0,0,0,0.5)',
+                    }}
+                    visibility={this.state.visibility}>
+                    <View style={{
+                        backgroundColor: 'white',
+                        justifyContent: 'space-between'
+                    }}>
+                        <XText touchOpacityStyle={[{height: 50}, itemStyle]}
                                onPress={() => this.setState({visibility: !this.state.visibility})}
                                text={'点击消失'}/>
                         <SimpleModalBottomView cancelPress={() => this.setState({visibility: !this.state.visibility})}

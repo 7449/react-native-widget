@@ -19,8 +19,6 @@ export default class XModalView extends Component {
         transparent: true,
         animationType: 'none',
         childViewStyle: {
-            alignItems: 'center',
-            justifyContent: 'center',
             flex: 1,
             backgroundColor: 'rgba(0,0,0,0.5)',
         },
@@ -46,7 +44,9 @@ export default class XModalView extends Component {
                     <TouchableWithoutFeedback onPress={onPress}>
                         <View style={viewStyle}>
                             <View style={childViewStyle}>
-                                {this.props.children}
+                                <TouchableWithoutFeedback>
+                                    {this.props.children}
+                                </TouchableWithoutFeedback>
                             </View>
                         </View>
                     </TouchableWithoutFeedback>}

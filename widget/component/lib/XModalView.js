@@ -41,13 +41,16 @@ export default class XModalView extends Component {
                 animationType={animationType}
                 transparent={transparent}
                 onRequestClose={onRequestClose}>
-                <View style={childViewStyle}>
-                    {isNull(onPress) ? null :
-                        <TouchableWithoutFeedback onPress={onPress}>
-                            <View style={viewStyle}/>
-                        </TouchableWithoutFeedback>}
-                    {this.props.children}
-                </View>
+                {isNull(onPress) ? <View style={childViewStyle}>
+                        {this.props.children}
+                    </View> :
+                    <TouchableWithoutFeedback onPress={onPress}>
+                        <View style={viewStyle}>
+                            <View style={childViewStyle}>
+                                {this.props.children}
+                            </View>
+                        </View>
+                    </TouchableWithoutFeedback>}
             </Modal>
         )
     }

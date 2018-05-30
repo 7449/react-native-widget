@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import XTouchOpacityView from "./XTouchOpacityView";
 import PropTypes from "prop-types";
 import XText from "./XText";
+import XTouchHighView from "./XTouchHighView";
 
 export default class XTextButton extends Component {
 
@@ -28,17 +29,60 @@ export default class XTextButton extends Component {
         icon: PropTypes.any,
 
         viewStyle: PropTypes.any,
+
+        type: PropTypes.oneOf(['opacity', 'high']),
+
+        underlayColor: PropTypes.string,
+        touchHighStyle: PropTypes.any,
     };
 
     static defaultProps = {
         imageOption: 'top',
+        type: 'opacity',
     };
 
     render() {
-        return !this.props.disabled ? this.getTouchView() : this.getView();
+        if (this.props.disabled || !this.props.onPress) return this.getView();
+        let type = this.props.type;
+        switch (type) {
+            case 'opacity':
+                return this.getTouchOpacityView();
+            case 'high':
+                return this.getTouchHighView();
+            default:
+                return null;
+        }
     }
 
-    getTouchView = () => {
+    getTouchHighView = () => {
+        const {
+            disabled,
+            underlayColor,
+            pressTime,
+            pressTimePress,
+            onPress,
+            onLongPress,
+            onPressIn,
+            onPressOut,
+            object,
+            touchHighStyle,
+        } = this.props;
+        return <XTouchHighView
+            disabled={disabled}
+            underlayColor={underlayColor}
+            pressTimePress={pressTimePress}
+            pressTime={pressTime}
+            onPress={onPress}
+            onLongPress={onLongPress}
+            onPressIn={onPressIn}
+            onPressOut={onPressOut}
+            object={object}
+            touchHighStyle={touchHighStyle}>
+            {this.getView()}
+        </XTouchHighView>
+    };
+
+    getTouchOpacityView = () => {
         const {
             disabled,
             activeOpacity,

@@ -16,6 +16,7 @@ import XTagView from "./lib/XTagView";
 import FaceBookViewPager from "./lib/FaceBookViewPager";
 import SimpleModalBottomView from "./lib/simple/SimpleModalBottomView";
 import SimpleToolBar from "./lib/simple/SimpleToolBar";
+import FixStatusBar from "./lib/FixStatusBar";
 
 export {
     XBackComponent,
@@ -36,6 +37,7 @@ export {
     SimpleModalBottomView,
     SimpleToolBar,
     FaceBookViewPager,
+    FixStatusBar,
 };
 
 

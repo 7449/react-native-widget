@@ -23,7 +23,7 @@ export default class SimpleXSectionListScreen extends XBackComponent {
                 <XSectionList
                     emptyStatus={this.state.emptyStatus}
                     emptyText={this.state.emptyStatus === EMPTY ? '数据为空' : '网络错误'}
-                    emptyIcon={this.state.emptyStatus === EMPTY ? require('../widget/component/lib/ximage/icon_net_empty.png') : require('../widget/component/lib/ximage/icon_net_error.png')}
+                    emptyIcon={this.state.emptyStatus === EMPTY ? require('../../widget/component/lib/ximage/icon_net_empty.png') : require('../../widget/component/lib/ximage/icon_net_error.png')}
                     emptyPress={() => {
                         console.log("================", '点击重试', "=======================");
                     }}

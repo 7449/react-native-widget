@@ -3,11 +3,11 @@ import {BackHandler} from 'react-native';
 
 export default class XBackComponent extends Component {
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
     }
 
-    componentWillUnmount() {
+    UNSAFE_componentWillUnmount() {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
     }
 

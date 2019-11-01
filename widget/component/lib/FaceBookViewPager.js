@@ -115,7 +115,7 @@ class FaceBookViewPager extends React.Component {
         });
     }
 
-    componentWillReceiveProps(nextProps: Props) {
+    UNSAFE_componentWillReceiveProps(nextProps: Props) {
         if (nextProps.selectedIndex !== this.state.selectedIndex) {
             if (Platform.OS === "ios") {
                 this._scrollview.scrollTo({

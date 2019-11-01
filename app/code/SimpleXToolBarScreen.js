@@ -9,9 +9,9 @@ export default class SimpleXToolBarScreen extends XBackComponent {
         return (
             <View>
                 <XToolBar
-                    leftIcon={require('../widget/component/lib/ximage/icon_temp.png')}
-                    rightIcon={require('../widget/component/lib/ximage/icon_temp.png')}
-                    centerIcon={require('../widget/component/lib/ximage/icon_temp.png')}
+                    leftIcon={require('../../widget/component/lib/ximage/icon_temp.png')}
+                    rightIcon={require('../../widget/component/lib/ximage/icon_temp.png')}
+                    centerIcon={require('../../widget/component/lib/ximage/icon_temp.png')}
                     leftText={'left'}
                     centerText={'center'}
                     rightText={'right'}

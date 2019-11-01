@@ -24,12 +24,6 @@ export default class App extends XBackComponent {
                 <Text style={styles.title}>{'已经添加的组件'}</Text>
                 <ScrollView>
                     <XText
-                        text={'XBackComponent'}
-                        textStyle={styles.item}/>
-                    <XText
-                        text={'XTag'}
-                        textStyle={styles.item}/>
-                    <XText
                         onPress={() => this.props.navigation.navigate(ScreenXTouchName)}
                         text={'XTouch'}
                         textStyle={styles.item}/>
@@ -82,7 +76,6 @@ export default class App extends XBackComponent {
         );
     }
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -92,18 +85,17 @@ const styles = StyleSheet.create({
     },
     title: {
         padding: 10,
-        fontSize: 20,
-        margin: 10,
-        width: '80%',
+        fontSize: 18,
+        margin: 8,
         textAlign: 'center'
     },
     item: {
-        alignItems: 'center',
-        marginBottom: 10,
-        padding: 10,
+        marginBottom: 8,
+        padding: 8,
+        textAlign: 'center',
         backgroundColor: 'gray',
         width: screenW,
-        fontSize: 20,
+        fontSize: 18,
         color: 'white',
     },
 });

@@ -1624,7 +1624,7 @@ ci-info@^2.0.0:
 
 clamp@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.npm.taobao.org/clamp/download/clamp-1.0.1.tgz#66a0e64011816e37196828fdc8c8c147312c8634"
+  resolved "https://registry.yarnpkg.com/clamp/-/clamp-1.0.1.tgz#66a0e64011816e37196828fdc8c8c147312c8634"
   integrity sha1-ZqDmQBGBbjcZaCj9yMjBRzEshjQ=
 
 class-utils@^0.3.5:
@@ -2773,8 +2773,8 @@ hermes-engine@^0.2.1:
 
 hoist-non-react-statics@^2.2.0, hoist-non-react-statics@^2.3.1:
   version "2.5.5"
-  resolved "https://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
-  integrity sha1-xZA89AnA39kI84jmGdhrnBF0y0c=
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
 hosted-git-info@^2.1.4:
   version "2.8.5"
@@ -4998,25 +4998,25 @@ react-is@^16.8.1, react-is@^16.8.4:
 
 react-lifecycles-compat@^3.0.2:
   version "3.0.4"
-  resolved "https://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-  integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/react-native-dismiss-keyboard/download/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
+  resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
   integrity sha1-MohiQrPyMX4SHzrrmwpYXiuHm0k=
 
 react-native-drawer-layout-polyfill@^1.3.2:
   version "1.3.2"
-  resolved "https://registry.npm.taobao.org/react-native-drawer-layout-polyfill/download/react-native-drawer-layout-polyfill-1.3.2.tgz#192c84d7a5a6b8a6d2be2c7daa5e4164518d0cc7"
-  integrity sha1-GSyE16WmuKbSvix9ql5BZFGNDMc=
+  resolved "https://registry.yarnpkg.com/react-native-drawer-layout-polyfill/-/react-native-drawer-layout-polyfill-1.3.2.tgz#192c84d7a5a6b8a6d2be2c7daa5e4164518d0cc7"
+  integrity sha512-XzPhfLDJrYHru+e8+dFwhf0FtTeAp7JXPpFYezYV6P1nTeA1Tia/kDpFT+O2DWTrBKBEI8FGhZnThrroZmHIxg==
   dependencies:
     react-native-drawer-layout "1.3.2"
 
 react-native-drawer-layout@1.3.2:
   version "1.3.2"
-  resolved "https://registry.npm.taobao.org/react-native-drawer-layout/download/react-native-drawer-layout-1.3.2.tgz#b9740d7663a1dc4f88a61b9c6d93d2d948ea426e"
-  integrity sha1-uXQNdmOh3E+IphucbZPS2UjqQm4=
+  resolved "https://registry.yarnpkg.com/react-native-drawer-layout/-/react-native-drawer-layout-1.3.2.tgz#b9740d7663a1dc4f88a61b9c6d93d2d948ea426e"
+  integrity sha512-fjO0scqbJUfNu2wuEpvywL7DYLXuCXJ2W/zYhWz986rdLytidbys1QGVvkaszHrb4Y7OqO96mTkgpOcP8KWevw==
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
@@ -5027,8 +5027,8 @@ react-native-iphone-x-helper@^1.2.1:
 
 react-native-safe-area-view@0.11.0:
   version "0.11.0"
-  resolved "https://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.11.0.tgz#4f3dda43c2bace37965e7c6aef5fc83d4f19d174"
-  integrity sha1-Tz3aQ8K6zjeWXnxq71/IPU8Z0XQ=
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.11.0.tgz#4f3dda43c2bace37965e7c6aef5fc83d4f19d174"
+  integrity sha512-N3nElaahu1Me2ltnfc9acpgt1znm6pi8DSadKy79kvdzKwvVIzw0IXueA/Hjr51eCW1BsfNw7D1SgBT9U6qEkA==
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
@@ -5075,8 +5075,8 @@ react-native@0.61.3:
 
 react-navigation@^1.5.9:
   version "1.6.1"
-  resolved "https://registry.npm.taobao.org/react-navigation/download/react-navigation-1.6.1.tgz#f08b560637edb5517f375bbd9bae3123e3027206"
-  integrity sha1-8ItWBjfttVF/N1u9m64xI+MCcgY=
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-1.6.1.tgz#f08b560637edb5517f375bbd9bae3123e3027206"
+  integrity sha512-18qvuGEMorsYAtedvcDvrWi6eqdTOC7T2u1mSLddWCXKIwGsC44d4PfAzKtnd6JtMpvbCd+livTGyylfRHT2fA==
   dependencies:
     clamp "^1.0.1"
     hoist-non-react-statics "^2.2.0"

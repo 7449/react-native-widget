@@ -5,7 +5,6 @@ import {ifIphoneX} from "react-native-iphone-x-helper";
 export const screenW = Dimensions.get('window').width;
 export const screenH = Dimensions.get('window').height;
 
-
 const DEFAULT_DENSITY = 2;
 const w2 = 380 / DEFAULT_DENSITY;
 

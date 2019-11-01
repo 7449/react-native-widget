@@ -1,8 +1,8 @@
 import React from "react";
 import {View} from "react-native";
-import {XBackComponent, XStatusView, XText} from "../widget/component/index";
-import {EMPTY, ERROR, LOADING, NORMAL, SUCCESS} from "../widget/component/lib/helper/StringUtils";
-import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
+import {XBackComponent, XStatusView, XText} from "../../widget/component/index";
+import {EMPTY, ERROR, LOADING, NORMAL, SUCCESS} from "../../widget/component/lib/helper/StringUtils";
+import {fixStatusBarHeight} from "../../widget/component/lib/helper/Screen";
 
 export default class SimpleXStatusScreen extends XBackComponent {
 

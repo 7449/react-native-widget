@@ -1,7 +1,7 @@
 import React from "react";
 import {ScrollView} from "react-native";
-import {XBackComponent, XCardView, XText} from "../widget/component/index";
-import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
+import {XBackComponent, XCardView, XText} from "../../widget/component/index";
+import {fixStatusBarHeight} from "../../widget/component/lib/helper/Screen";
 
 export default class SimpleXTouchScreen extends XBackComponent {
     state = {

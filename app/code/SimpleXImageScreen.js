@@ -1,7 +1,7 @@
 import React from "react";
 import {View} from "react-native";
-import {XBackComponent, XImage, XText} from "../widget/component/index";
-import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
+import {XBackComponent, XImage, XText} from "../../widget/component/index";
+import {fixStatusBarHeight} from "../../widget/component/lib/helper/Screen";
 
 export default class SimpleXImageScreen extends XBackComponent {
 

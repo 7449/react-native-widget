@@ -1,6 +1,5 @@
 import React from "react";
 import {StackNavigator} from 'react-navigation'
-import App from "./App";
 import SimpleXTouchScreen from "./SimpleXTouchScreen";
 import SimpleXTextScreen from "./SimpleXTextScreen";
 import SimpleXImageScreen from "./SimpleXImageScreen";
@@ -13,7 +12,7 @@ import SimpleXToolBarScreen from "./SimpleXToolBarScreen";
 import SimpleXFlatListScreen from "./SimpleXFlatListScreen";
 import SimpleXSectionListScreen from "./SimpleXSectionListScreen";
 import SimpleXTabScreen from "./SimpleXTabScreen";
-
+import App from "../../App";
 
 const RouteConfigs = {
     Home: {

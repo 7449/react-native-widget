@@ -1,7 +1,7 @@
 import React from "react";
-import {XBackComponent, XToolBar} from "../widget/component/index";
+import {XBackComponent, XToolBar} from "../../widget/component/index";
 import {View} from "react-native";
-import XText from "../widget/component/lib/XText";
+import XText from "../../widget/component/lib/XText";
 
 export default class SimpleXToolBarScreen extends XBackComponent {
 

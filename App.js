@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {XBackComponent, XText} from "../widget/component/index";
+import {XBackComponent, XText} from "./widget/component/index";
 import {
     ScreenXCardName,
     ScreenXFlatListName,
@@ -14,8 +14,8 @@ import {
     ScreenXTextName,
     ScreenXToolBarName,
     ScreenXTouchName
-} from "./String";
-import {fixStatusBarHeight, screenW} from "../widget/component/lib/helper/Screen";
+} from "./app/code/String";
+import {fixStatusBarHeight, screenW} from "./widget/component/lib/helper/Screen";
 
 export default class App extends XBackComponent {
     render() {

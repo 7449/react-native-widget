@@ -1,8 +1,8 @@
 import React from "react";
 import {ScrollView} from "react-native";
-import {XBackComponent} from "../widget/component/index";
-import XTextButton from "../widget/component/lib/XTextButton";
-import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
+import {XBackComponent} from "../../widget/component/index";
+import XTextButton from "../../widget/component/lib/XTextButton";
+import {fixStatusBarHeight} from "../../widget/component/lib/helper/Screen";
 
 export default class SimpleXTextButtonScreen extends XBackComponent {
 

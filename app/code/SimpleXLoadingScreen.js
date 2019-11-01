@@ -1,8 +1,8 @@
 import React from "react";
-import {XBackComponent, XLoadingView, XText} from "../widget/component/index";
+import {XBackComponent, XLoadingView, XText} from "../../widget/component/index";
 import {View} from "react-native";
 import {itemStyle} from "./Style";
-import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
+import {fixStatusBarHeight} from "../../widget/component/lib/helper/Screen";
 
 export default class SimpleXLoadingScreen extends XBackComponent {
 

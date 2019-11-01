@@ -1,9 +1,9 @@
 import React from "react";
 import {View} from "react-native";
-import {XBackComponent, XText} from "../widget/component/index";
+import {XBackComponent, XText} from "../../widget/component/index";
 import {itemStyle} from "./Style";
 import {ScreenXTextName} from "./String";
-import {fixStatusBarHeight} from "../widget/component/lib/helper/Screen";
+import {fixStatusBarHeight} from "../../widget/component/lib/helper/Screen";
 
 export default class SimpleXTouchScreen extends XBackComponent {
 
